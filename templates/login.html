@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <style type="text/css">
+
+
+body {
+    text-align: center;
+}
+
+
+/* Full-width inputs */
+input[type=text], input[type=password] {
+  width: 20%;
+  padding: 5px 10px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+#sub {
+  background-color: green;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 5%;
+  align_items: center
+  position: absolute
+}
+
+.message{
+color: red;
+font-size: 20px;
+}
+label{
+font-size: 20px;
+
+}
+
+
+    </style>
+   
+</head>
+<body bgcolor="orange">
+
+<p class="message">{{message}}
+
+<form action="/login1" method="post">
+    <label>Username:</label><input type="text" name="username"><br>
+    <label>Password:</label><input type="password" id='pd' name="password" value="{{request.form.password}}"><br>
+    <input type="submit" id='sub' name="submit" value="login">
+
+
+</form>
+{% if error %}
+<p class="error">{{error}}
+{% endif %}
+
+{% if name %}
+<p class="user_name">{{name}}
+{% endif %}
+
+
+</body>
